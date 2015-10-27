@@ -74,6 +74,7 @@ sub read_amavis_snmp_db {
     }
     $val = int( $val );
     $key =~ s/([a-z])([A-Z])/$1_$2/g;
+    $key =~ s/[\.\/\-]/_/g;
     $key = lc( $key );
 
     if( $key =~ /^(sys|log)/) {
